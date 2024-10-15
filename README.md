@@ -3,9 +3,9 @@
 
 Note in Every command and URL being called there are fields that need to be replaced.
 
-Example replacements:
+Example replacements (make sure to replace the curly brackets as well: don't keep curly brackets)
 
-`{studentName}` - example `ajdewilzin`
+`{studentName}` - example `ajdewilzin` - this can be your name, independent of your login details
 
 `{region}` - example `eu-north-1`
 
@@ -15,12 +15,15 @@ Example replacements:
 ```bash
 aws sqs create-queue --queue-name {studentName}OrderQueue
 ```
+If successful, you will see in your terminal a JSON response that includes `"QueueUrl": "some_aws_url`.
+
+Replace `_queueUrl` in your Controller code with the generated `QueueUrl` from the above command.
+
 
 ```bash
 aws sns subscribe --topic-arn arn:aws:sns:{region}:637423341661:{studentName}OrderCreatedTopic --protocol sqs --notification-endpoint arn:aws:sqs:{region}:637423341661:{studentName}OrderQueue
 ```
 
-Replace the above `QueueUrl` with `_queueUrl` in your controller
 
 2. Create an SNS Topic:
 
