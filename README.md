@@ -34,6 +34,8 @@ Replace `_queueUrl` in your Controller code with the generated `QueueUrl` from t
 aws sns subscribe --topic-arn arn:aws:sns:{region}:637423341661:{studentName}OrderCreatedTopic --protocol sqs --notification-endpoint arn:aws:sqs:{region}:637423341661:{studentName}OrderQueue
 ```
 
+You don't need to save the generated SubscriptionArn.
+
 3. Create an EventBridge Event Bus:
 
 ```bash
