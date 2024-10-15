@@ -48,6 +48,8 @@ aws events create-event-bus --name {StudentName}CustomEventBus --region {region}
 aws events put-rule --name {StudentName}OrderProcessedRule --event-pattern '{\"source\": [\"order.service\"]}' --event-bus-name {StudentName}CustomEventBus
 ```
 
+If your terminal complains about double quotes, you might need to remove the backslash `\` from the command above (and commands later on).
+
 
 5. Subscribe the SQS Queue to the SNS Topic
 
