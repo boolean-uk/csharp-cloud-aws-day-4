@@ -10,11 +10,21 @@ Example replacements (make sure to replace the curly brackets as well: don't kee
 `{region}` - example `eu-north-1`
 
 ### Steps
-1. Create an SQS Queue:
+1. Create an SNS Topic:
+
+```bash
+aws sns create-topic --name {studentName}OrderCreatedTopic
+```
+If successful, you will see in your terminal a JSON response that includes `"TopicArn": "...`.
+
+Replace `_topicArn` in your Controller code with the generated `TopicArn` value from above.
+
+2. Create an SQS Queue:
 
 ```bash
 aws sqs create-queue --queue-name {studentName}OrderQueue
 ```
+
 If successful, you will see in your terminal a JSON response that includes `"QueueUrl": "some_aws_url`.
 
 Replace `_queueUrl` in your Controller code with the generated `QueueUrl` from the above command.
@@ -23,15 +33,6 @@ Replace `_queueUrl` in your Controller code with the generated `QueueUrl` from t
 ```bash
 aws sns subscribe --topic-arn arn:aws:sns:{region}:637423341661:{studentName}OrderCreatedTopic --protocol sqs --notification-endpoint arn:aws:sqs:{region}:637423341661:{studentName}OrderQueue
 ```
-
-
-2. Create an SNS Topic:
-
-```bash
-aws sns create-topic --name {studentName}OrderCreatedTopic
-```
-
-Replace the above `TopicArn` with `_topicArn` in your controller
 
 3. Create an EventBridge Event Bus:
 
