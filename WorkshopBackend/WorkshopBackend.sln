@@ -7,6 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService", "OrderServic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E49EF9F2-F493-4887-B8CF-FCF54A7C151D}"
 	ProjectSection(SolutionItems) = preProject
+		attributes.json = attributes.json
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
