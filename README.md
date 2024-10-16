@@ -69,7 +69,7 @@ In Bash/Unix terminals you can run this command:
 aws sqs set-queue-attributes --queue-url https://sqs.eu-north-1.amazonaws.com/637423341661/tvaltnOrderQueue --attributes '{"Policy":"{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Action\":\"SQS:SendMessage\",\"Resource\":\"arn:aws:sqs:eu-north-1:637423341661:tvaltnOrderQueue\",\"Condition\":{\"ArnEquals\":{\"aws:SourceArn\":\"arn:aws:sns:eu-north-1:637423341661:tvaltnOrderCreatedTopic\"}}}]}"}' --region eu-north-1
 ```
 
-With a json file instead:
+With a json file instead (Run this from the root directory of this repo):
 ```bash
 aws sqs set-queue-attributes --queue-url https://sqs.eu-north-1.amazonaws.com/637423341661/tvaltnOrderQueue --attributes file://attributes.json --region eu-north-1
 ```
