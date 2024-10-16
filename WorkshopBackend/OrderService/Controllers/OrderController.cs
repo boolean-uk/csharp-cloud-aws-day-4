@@ -16,7 +16,7 @@ public class OrderController : ControllerBase
     private readonly IAmazonSimpleNotificationService _sns;
     private readonly IAmazonEventBridge _eventBridge;
     private readonly string _queueUrl = ""; // Format of https://.*
-    private readonly string _topicArn = ""; // Format of arn:aws.*
+    private readonly string _topicArn = "arn:aws:sns:eu-north-1:637423341661:georgeOrderCreatedTopic"; // Format of arn:aws.*
 
     public OrderController()
     {
