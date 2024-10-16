@@ -39,13 +39,13 @@ You don't need to save the generated SubscriptionArn.
 3. Create an EventBridge Event Bus:
 
 ```bash
-aws events create-event-bus --name {StudentName}CustomEventBus --region eu-north-1
+aws events create-event-bus --name joaquinCustomEventBus --region eu-north-1
 ```
 
 4. Create an EventBridge Rule:
 
 ```bash
-aws events put-rule --name {StudentName}OrderProcessedRule --event-pattern '{\"source\": [\"order.service\"]}' --event-bus-name {StudentName}CustomEventBus
+aws events put-rule --name joaquinOrderProcessedRule --event-pattern '{\"source\": [\"order.service\"]}' --event-bus-name joaquinCustomEventBus
 ```
 
 If your terminal complains about double quotes, you might need to remove the backslash `\` from the command above (and commands later on).
