@@ -12,6 +12,7 @@
     <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.7.400.34" />
     <PackageReference Include="AWSSDK.SQS" Version="3.7.400.34" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.7" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.8" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
