@@ -1,4 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using OrderService.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +25,9 @@ builder.Services.AddCors(options => options.AddPolicy("CorsPolicy",
                             .AllowAnyMethod()
                             .AllowAnyHeader()
                         ));
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<OrderContext>(options => options.UseNpgsql(connectionString));
 
 var app = builder.Build();
 app.UseCors("CorsPolicy");
