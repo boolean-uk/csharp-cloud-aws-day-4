@@ -1,3 +1,5 @@
+DONE
+
 # C# Cloud AWS - Day Four
 ## Commands to Set Up SQS, SNS, and EventBridge
 
